@@ -1,0 +1,190 @@
+{
+  "missao": "STATION ALPHA-7",
+  "data_referencia": "2031-03-15",
+  "fuso_horario": "UTC",
+
+  "modulos_criticos": {
+    "suporte_vida": {
+      "status": 1,
+      "descricao": "Operacional",
+      "ultima_verificacao": "2031-03-15T08:00:00Z"
+    },
+    "energia": {
+      "status": 1,
+      "descricao": "Operacional",
+      "ultima_verificacao": "2031-03-15T08:00:00Z"
+    },
+    "comunicacao": {
+      "status": 0,
+      "descricao": "FALHA — link primário offline",
+      "ultima_verificacao": "2031-03-15T07:45:00Z"
+    },
+    "habitat": {
+      "status": 1,
+      "descricao": "Operacional",
+      "ultima_verificacao": "2031-03-15T08:00:00Z"
+    },
+    "laboratorio": {
+      "status": 1,
+      "descricao": "Operacional",
+      "ultima_verificacao": "2031-03-15T08:00:00Z"
+    },
+    "armazenamento": {
+      "status": 0,
+      "descricao": "ALERTA — pressurização abaixo do nominal",
+      "ultima_verificacao": "2031-03-15T07:50:00Z"
+    }
+  },
+
+  "energia": {
+    "unidade_geracao": "kW",
+    "unidade_consumo": "kW",
+    "unidade_reserva": "kWh",
+    "leituras": [
+      {
+        "horario": "2031-03-15T00:00:00Z",
+        "geracao": 18.4,
+        "consumo": 15.1,
+        "reserva": 312.0
+      },
+      {
+        "horario": "2031-03-15T02:00:00Z",
+        "geracao": 17.9,
+        "consumo": 14.8,
+        "reserva": 318.2
+      },
+      {
+        "horario": "2031-03-15T04:00:00Z",
+        "geracao": 10.2,
+        "consumo": 16.3,
+        "reserva": 306.5,
+        "observacao": "Eclipse parcial — queda na geração solar"
+      },
+      {
+        "horario": "2031-03-15T06:00:00Z",
+        "geracao": 19.7,
+        "consumo": 17.2,
+        "reserva": 310.8
+      },
+      {
+        "horario": "2031-03-15T10:00:00Z",
+        "geracao": 21.3,
+        "consumo": 20.9,
+        "reserva": 308.4
+      },
+      {
+        "horario": "2031-03-15T14:00:00Z",
+        "geracao": 22.1,
+        "consumo": 23.7,
+        "reserva": 296.1,
+        "observacao": "Consumo elevado — experimentos laboratoriais ativos"
+      }
+    ]
+  },
+
+  "variaveis_ambientais": {
+    "temperatura_interna": {
+      "valor": 21.4,
+      "unidade": "°C",
+      "status": "normal",
+      "horario": "2031-03-15T08:00:00Z"
+    },
+    "temperatura_externa": {
+      "valor": -127.3,
+      "unidade": "°C",
+      "status": "normal",
+      "horario": "2031-03-15T08:00:00Z"
+    },
+    "nivel_radiacao": {
+      "valor": 3.8,
+      "unidade": "mSv/h",
+      "status": "elevado",
+      "limite_seguro": 2.5,
+      "horario": "2031-03-15T08:00:00Z"
+    },
+    "qualidade_comunicacao": {
+      "valor": 0,
+      "unidade": "%",
+      "status": "FALHA",
+      "horario": "2031-03-15T07:45:00Z",
+      "observacao": "Antena principal sem sinal — usando backup com 34% de eficiência"
+    },
+    "pressao_habitat": {
+      "valor": 101.1,
+      "unidade": "kPa",
+      "status": "normal",
+      "horario": "2031-03-15T08:00:00Z"
+    },
+    "umidade_interna": {
+      "valor": 47.2,
+      "unidade": "%",
+      "status": "normal",
+      "horario": "2031-03-15T08:00:00Z"
+    }
+  },
+
+  "log_eventos": [
+    {
+      "id": 1,
+      "horario": "2031-03-14T23:12:00Z",
+      "tipo": "INFO",
+      "modulo": "energia",
+      "mensagem": "Sistema de baterias concluiu ciclo de recarga. Reserva em 318.2 kWh."
+    },
+    {
+      "id": 2,
+      "horario": "2031-03-15T01:30:00Z",
+      "tipo": "ALERTA",
+      "modulo": "armazenamento",
+      "mensagem": "Pressurização do compartimento B-3 caiu para 94.7 kPa. Investigação necessária."
+    },
+    {
+      "id": 3,
+      "horario": "2031-03-15T03:47:00Z",
+      "tipo": "FALHA_SENSOR",
+      "modulo": "laboratorio",
+      "mensagem": "Sensor de temperatura LAB-02 retornou valor nulo. Reinicialização automática agendada."
+    },
+    {
+      "id": 4,
+      "horario": "2031-03-15T04:05:00Z",
+      "tipo": "REINICIALIZACAO",
+      "modulo": "laboratorio",
+      "mensagem": "Sensor LAB-02 reinicializado com sucesso. Leituras normalizadas."
+    },
+    {
+      "id": 5,
+      "horario": "2031-03-15T07:45:00Z",
+      "tipo": "FALHA_CRITICA",
+      "modulo": "comunicacao",
+      "mensagem": "Antena principal COM-01 perdeu sincronização. Link primário com Terra encerrado. Ativando backup COM-02."
+    },
+    {
+      "id": 6,
+      "horario": "2031-03-15T07:52:00Z",
+      "tipo": "MUDANCA_MODO",
+      "modulo": "sistema",
+      "mensagem": "Sistema entrou em MODO DE CONTINGÊNCIA DE COMUNICAÇÃO. Transmissões não críticas suspensas."
+    },
+    {
+      "id": 7,
+      "horario": "2031-03-15T08:10:00Z",
+      "tipo": "ALERTA",
+      "modulo": "radiacao",
+      "mensagem": "Nível de radiação externo atingiu 3.8 mSv/h — acima do limite seguro de 2.5 mSv/h. EVA cancelada."
+    },
+    {
+      "id": 8,
+      "horario": "2031-03-15T08:30:00Z",
+      "tipo": "MUDANCA_PRIORIDADE",
+      "modulo": "energia",
+      "mensagem": "Prioridade de consumo reescalonada: suporte à vida > comunicação backup > habitat > laboratório."
+    }
+  ],
+
+  "inconsistencia_proposital": {
+    "descricao": "O módulo de comunicação tem status FALHA (0) desde 07:45 UTC, porém o log de eventos ID 8 (08:30 UTC) registra reescalonamento de prioridade de energia que inclui 'comunicação backup' como ativo — sem nenhum evento de restauração registrado entre 07:52 e 08:30 UTC. Há um gap de 38 minutos sem log que deveria conter a ativação confirmada do link backup.",
+    "modulo_afetado": "comunicacao",
+    "tipo": "gap_de_log_com_inconsistencia_de_estado"
+  }
+}
